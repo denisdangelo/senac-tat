@@ -1,0 +1,14 @@
+1  sudo init 0
+    2  sudo cat /etc/os-release
+    3  sudo cat /etc/lsb-release
+    4  clear
+    5  id
+    6  sudo
+    7  sudo -i
+    8  sudo apt update
+    9  sudo apt upgrade
+   10  sudo apt full-upgrade
+   11  sudo apt dist-upgrade
+   12  sudo apt autoremove
+   13  sudo apt autoclean
+   14  history
