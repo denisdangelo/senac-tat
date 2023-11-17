@@ -1,0 +1,22 @@
+1  sudo init 0
+    2  sudo cat /etc/os-release
+    3  sudo cat /etc/lsb-release
+    4  clear
+    5  id
+    6  sudo
+    7  sudo -i
+    8  sudo apt update
+    9  sudo apt upgrade
+   10  sudo apt full-upgrade
+   11  sudo apt dist-upgrade
+   12  sudo apt autoremove
+   13  sudo apt autoclean
+   14  history
+   15  sudo apt update
+   16  sudo apt install git vim python2 python3
+   17  sudo apt install kdenlive
+   18  ls
+   19  cd Downloads
+   20  ls
+   21  sudo dpkg -i wps-office_11.1.0.11708.XA_amd64.deb 
+   22  history
