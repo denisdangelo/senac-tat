@@ -1,0 +1,17 @@
+/**
+  Piscar LED
+  @author Denis D'Angelo
+
+*/
+
+void setup() {
+  pinMode(13, OUTPUT); //configurando o pino 13 como saida
+
+}
+
+void loop() {
+  digitalWrite(13, HIGH); //ativa o pino 13 
+  delay(1000); //1000ms=1s
+  digitalWrite(13, LOW); //desativar o pino 13
+  delay(1000); //1000ms=1s
+}
