@@ -1,0 +1,26 @@
+/**
+Semaforo
+@author Denis D'Angelo
+*/
+int tempo = 2000; //Criando uma variavel númerica e atribuindo o valor 2000
+
+void setup() {
+  pinMode(2, OUTPUT); //vermelho
+  pinMode(3, OUTPUT); //amarelo
+  pinMode(4, OUTPUT); //verde
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+
+  digitalWrite(2, HIGH); //ligar o led vermelho
+  digitalWrite(3, HIGH); //ligar o led vermelho
+  digitalWrite(4, HIGH); //ligar o led vermelho
+  digitalWrite(5, HIGH); //ligar o led vermelho
+  digitalWrite(6, HIGH); //ligar o led vermelho
+  digitalWrite(7, HIGH); //ligar o led vermelho
+}
+
+void loop() {
+  digitalWrite(2, HIGH); //ligar o led vermelho
+  
+}
