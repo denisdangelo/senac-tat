@@ -1,0 +1,58 @@
+Objetivo da aula de hoje: 21/11/2023
+
+Primeira etapa: Iniciar a máquina virtual do Linux Mint
+
+Segunda etapa.: Se autenticar na máquina com o seu usuário
+
+Terceira etapa: Atualizar o sistema:
+				Você pode usar o: MintUpdate ou
+				Terminal (Atalho Ctrl + Alt + T)
+					sudo apt update
+					sudo apt upgrade
+					sudo apt full-upgrade
+					sudo apt dist-upgrade
+					sudo apt autoremove
+					sudo apt autoclean
+
+Til = Diretório Home (Pessoal)
+pwd
+-------------------------------
+cd / Raiz (Root)
+cd - voltar (1 vez)
+cd ~ Home
+cd ..
+-------------------------------
+ls
+ls -lh
+ls -lha
+-------------------------------
+mkdir senac
+mkdir -v tatuape
+-------------------------------
+echo SENAC Tatuapé
+echo SENAC Tatuapé > senac.txt
+touch tatuape.txt
+-------------------------------
+cat senac.txt
+cat -n senac.txt
+cat /etc/services
+head /etc/services
+head -n20 /etc/services
+tail /etc/services
+tail -n20 /etc/services
+--------------------------------
+DESAFIO: UTILIZAR OS COMANDOS: cat, head e tail e o 
+redirecionador de saída padrão de comando para a entrada
+padrão do segundo comando, fazendo o filtro no arquivo:
+/etc/services filtrando as linhas: 100 até 200
+cat -n /etc/services | head -n200 | tail -n101 | less
+
+
+
+BÁSICO do BÁSICO de Git e Github utilizando o Linux Mint 20.3 Una x64 
+https://www.youtube.com/watch?v=JDCYyjbrJu0
+
+O QUE ESPERAR da NOVA versão do LINUX MINT 21.2 VICTORIA BETA Cinnamon - Instalação VirtualBOX
+https://www.youtube.com/watch?v=Ie9WblbiUu0
+
+Documentação: https://github.com/vaamonde/dell-linuxmint/blob/master/software/00-install-linuxmint-21.2-virtualbox-7.0.md

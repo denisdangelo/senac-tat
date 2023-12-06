@@ -1,0 +1,45 @@
+Objetivo da aula de hoje: 27/11/2023
+
+Primeira etapa: Pegar os materiais da aula:
+				01 (um) Notebook Itautec;
+				01 (uma) Fonte de Alimentação;
+				01 (um) Cabo de Rede
+				01 (um) Mouse (Se quiser)
+
+Segunda etapa.: Ligar o Notebook na Fonte e na 
+				Tomada
+
+Terceira etapa: Continuar os procedimentos do 
+				Github
+				https://github.com/vaamonde/dell-linuxmint/blob/master/07-Itautec-Infoway-N8645.md
+-----------------------------------------------
+
+VirtualBOX: https://github.com/vaamonde/dell-linuxmint/blob/master/software/01-virtualbox.md
+
+VMware Workstation: https://github.com/vaamonde/dell-linuxmint/blob/master/software/02-vmware.md
+
+Docker: https://github.com/vaamonde/dell-linuxmint/blob/master/software/03-docker.md
+
+GNS3: https://github.com/vaamonde/dell-linuxmint/blob/master/software/04-gns3.md
+
+Cisco Packet Tracer: https://github.com/vaamonde/dell-linuxmint/blob/master/software/05-packettracer.md
+
+Tilix ZSH (Hacker): https://github.com/vaamonde/dell-linuxmint/blob/master/software/06-tilix.md
+
+Vagrant: https://github.com/vaamonde/dell-linuxmint/blob/master/software/08-vagrant.md
+
+Powershell Microsoft: https://github.com/vaamonde/dell-linuxmint/blob/master/software/09-powershell.md
+
+Visual Studio VSCode: https://github.com/vaamonde/dell-linuxmint/blob/master/software/10-vscode.md
+
+WPS Office PT_BR: https://github.com/vaamonde/dell-linuxmint/blob/master/software/11-wpsoffice.md
+
+EdrawMax: https://github.com/vaamonde/dell-linuxmint/blob/master/software/17-edrawmax.md
+
+https://drive.google.com/drive/folders/11Um9e0eY5KhARW_waW15X732qyllEXpI?usp=sharing
+
+Eclipse IDE Java: https://github.com/vaamonde/dell-linuxmint/blob/master/software/19-eclipse.md
+
+SwapOff: https://github.com/vaamonde/dell-linuxmint/blob/master/software/15-swapoff.md
+
+Arduino: https://github.com/vaamonde/dell-linuxmint/blob/master/software/13-arduino.md

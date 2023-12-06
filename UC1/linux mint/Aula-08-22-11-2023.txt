@@ -1,0 +1,51 @@
+Objetivo da aula de hoje: 11/10/2023
+
+Primeira etapa: Pegar os materiais da aula:
+				01 (um) Notebook Itautec;
+				01 (uma) Fonte de Alimentação;
+				01 (um) Cabo de Rede
+				01 (um) Mouse (Se quiser)
+
+Segunda etapa.: Ligar o Notebook na Fonte e na 
+				Tomada (Observação: Na Janela tem tomadas sobrando, nas mesas do centro cuidado com as Tomadas que liga as demais mesas, vou mostrar qual é a Tomada, desconectar uma Tomada do PC ou Monitor para ligar o Notebook)
+
+Terceira etapa: Acessar a BIOS F2 do Notebook (VAMOS 
+				VERIFICAR ALGUMAS INFORMAÇÕES IMPORTANTES);
+				
+				Exit
+					Load Setup Defaults
+					<Yes>
+				Main
+					CPU: Intel i7 M620
+					RAM: 8192 (8.0GB)
+					HD.: SAMSUNG 500GB
+				Advanced
+					Primary Display: SG (IGD)
+				Exit
+					Exit Save 
+				
+				F12
+					USB HDD: USB Flash Disk-(USB 2.0)
+					
+				Placa de Rede: Cabeada;
+				Placa de Rede: Wireless (Wi-Fi);
+					
+				
+Quarta etapa..: Acessar o meu Github:
+				https://github.com/vaamonde/dell-linuxmint
+				Verificar os procedimentos da Documentação
+				https://github.com/vaamonde/dell-linuxmint/blob/master/07-Itautec-Infoway-N8645.md
+				
+Quinta etapa..: Pegar um Pendrive com o Linux Mint 21.2
+				Iniciar o Processo de Instalação do Linux Mint no Notebook Itautec, veja o procedimento na Documentação da Instalação do Mint no VirtualBOX
+				
+				https://github.com/vaamonde/dell-linuxmint/blob/master/software/00-install-linuxmint-21.2-virtualbox-7.0.md
+				
+Sexta etapa...: PADRONIZAÇÃO DO USUÁRIO, SENHA E NOME DE 
+				MÁQUINA
+				
+				Nome do Usuário...: Seu Nome e Sobrenome
+				Nome do Computador: seunome
+				Usuário de Login..: senac
+				Senha padrão......: 123@senac
+

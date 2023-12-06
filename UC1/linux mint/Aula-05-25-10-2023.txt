@@ -1,0 +1,16 @@
+Objetivo da aula de hoje: 25/10/2023
+
+Primeira etapa: Iniciar o Linux Mint
+
+Segunda etapa.: Atualizar o Linux Mint
+				#01 utilizar o MintUpdate
+				#02 utilziar o Terminal
+					Ctrl + Alt + T
+					sudo apt update
+					sudo apt upgrade
+					sudo apt full-upgrade
+					sudo apt dist-upgrade
+					sudo apt autoremove
+					sudo apt autoclean
+
+Terceira etapa: AGUARDAR OS PROCEDIMENTOS DA AULA DE HOJE

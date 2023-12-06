@@ -1,0 +1,31 @@
+Objetivo da aula de hoje: 05/12/2023 - (FINALIZAÇÃO)
+
+Primeira etapa: Iniciar a máquina virtual do Linux Mint
+
+Segunda etapa.: Se autenticar na máquina com o seu usuário
+
+Terceira etapa: Atualizar o sistema:
+				Você pode usar o: MintUpdate ou
+				Terminal (Atalho Ctrl + Alt + T)
+					sudo apt update
+					sudo apt upgrade
+					sudo apt full-upgrade
+					sudo apt dist-upgrade
+					sudo apt autoremove
+					sudo apt autoclean
+
+Desafios: Utilizar o editor de Texto VIM para criar os 
+		  arquivos:
+			senac.txt
+			senai.md
+			sesc.bat
+			sesi.exe
+			sebrae.png
+		
+		vim /etc/services
+
+DESAFIO FINAL: pesquisar no editor de Texto VIM como criar Multiplas Áreas de Trabalho (Janelas Vertical e Horizontal), fazer a criação de 04 (quatro áreas/janelas de trabalho) em cada área abrir os arquivos:
+		:e /etc/services
+		:e /etc/hostname
+		:e /etc/crontab
+		:e /etc/wgetrc

@@ -1,0 +1,84 @@
+Objetivo da aula de hoje: 09/11/2023
+
+Primeira etapa: Iniciar a máquina virtual do Linux Mint
+
+Segunda etapa.: Se autenticar na máquina com o seu usuário
+
+Terceira etapa: Atualizar o sistema
+
+Quarta etapa..: Conhecendo mais o MintUpdate
+
+Quinta etapa..: INSTALAR O GOOGLE CHROME
+						   NAVEGADOR OPERA
+						   MICROSOFT EDGE LINUX (BETA)
+						   VIVALDI
+						   S
+		sudo init 0
+						   
+
+----------------------------------------------------------
+
+OBSERVAÇÃO: HOJE VOU VERIFICAR AS CONTAS NO GITHUB E LINKEDIN E CRIAR A PLANILHA DE NETWORKING DA TURMA.
+
+	O que é Apt-Get ou Apt
+	O que é SOURCES.LIST
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Criar uma conta no Github..: https://github.com/
+Criar uma conta no Linkedin: https://br.linkedin.com/
+
+Material: https://github.com/vaamonde/dell-linuxmint
+
+O que é Open Source?
+O que é Free Software?
+O que é GNU?
+O que é GPL? 4 Liberdades
+O que é Linux?
+O que é Kernel Linux?
+-------------------------
+O que é GNU/Linux?
+O que é Distribuição GNU/Linux?
+O que é? Slackware	TGZ
+		 Debian		DEB
+		 Red Hat	RPM
+O que é Derivação GNU/Linux?
+Debian --> Ubuntu Linux --> Linux Mint
+-------------------------------------------------
+Arquivos...:
+Disco Local:
+Novo Volume:
+				ISO
+
+Linux Mint: 
+-------------------------------------------------
+O que é Virtualização?
+VirtualBOX: CPU >= 4 Core
+			RAM >= 8GB
+			HD  SSD
+
+BÁSICO do BÁSICO de Git e Github utilizando o Linux Mint 20.3 Una x64 
+https://www.youtube.com/watch?v=JDCYyjbrJu0
+
+O QUE ESPERAR da NOVA versão do LINUX MINT 21.2 VICTORIA BETA Cinnamon - Instalação VirtualBOX
+https://www.youtube.com/watch?v=Ie9WblbiUu0
+
+Documentação: https://github.com/vaamonde/dell-linuxmint/blob/master/software/00-install-linuxmint-21.2-virtualbox-7.0.md

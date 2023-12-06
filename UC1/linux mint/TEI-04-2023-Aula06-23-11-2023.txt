@@ -1,0 +1,80 @@
+Objetivo da aula de hoje: 23/11/2023
+
+Primeira etapa: Iniciar a máquina virtual do Linux Mint
+
+Segunda etapa.: Se autenticar na máquina com o seu usuário
+
+Terceira etapa: Atualizar o sistema:
+				Você pode usar o: MintUpdate ou
+				Terminal (Atalho Ctrl + Alt + T)
+					sudo apt update
+					sudo apt upgrade
+					sudo apt full-upgrade
+					sudo apt dist-upgrade
+					sudo apt autoremove
+					sudo apt autoclean
+
+BÁSICO do BÁSICO do Editor de Texto VIM utilizando o Linux Mint 20.3 Una x64
+https://www.youtube.com/watch?v=KknZSuFsfmk
+
+Como Instalar o Visual Studio Code no Linux Mint 20.2 Uma
+https://www.youtube.com/watch?v=faS3gZgKE-A
+
+Sites GNU/Linux
+https://www.guiafoca.org/guiaonline/inicianteintermediario/
+https://ss64.com/bash/
+https://aurelio.net/shell/canivete/
+https://aurelio.net/vim/
+
+Resumo
+sudo
+apt
+pwd
+cd
+ls
+mkdir
+echo
+touch
+head
+tail
+Red: | (pipe) > Maior >> Maior Maior
+-------------------------------------
+cp
+	cp -v origem* destino
+mv
+	mv -v origem* destino
+	
+rm (remover)
+	rm -Rfv */ (PERIGO)
+	sudo rm -Rfv /*
+-------------------------------------
+/home/senac/Documentos/
+						SENAC/
+							  tat/
+								  tei.txt
+							  bra/
+							      tst.txt
+							  pen/
+							      tae.txt
+						SESC/
+							  bel/
+							      artes.txt
+							  san/
+							      leitura.txt
+							  ita/
+							      musica.txt
+						SENAI/
+							  bra/
+								  fresa.txt
+							  cor/
+							      torno.txt
+							  gua/
+							      solda.txt
+						SESI/
+							  bel/
+								  fund1.txt
+							  car/
+								  fund2.txt
+							  bra/
+								  tec.txt
+							  
