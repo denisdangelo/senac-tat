@@ -1,1 +1,13 @@
-
+ipconfig	
+ipconfig /all
+ipconfig /release
+ipconfig /renew
+ipconfig /displaydns
+ipconfig /flushdns
+route print
+ping 8.8.8.8
+ping google.com
+tracert 8.8.8.8	
+nslookup 8.8.8.8
+nslookup google.com
+hostname
