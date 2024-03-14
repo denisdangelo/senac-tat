@@ -1,1 +1,12 @@
+#Criar usuário com perfil de Administrados no SO Windows 10
 
+iniciar >>
+contas >>
+família e outros usuários >>
+adicionar outra pessoa a este PC >>
+Não tenho as informações de entrada dessa pessoa >>
+adicionar um usuário sem uma conta da Microsoft >>
+colocar nome e senha de acesso>>
+Selecionar perfil >>
+Alterar tipo de conta>>
+Selecione "Administrador".
