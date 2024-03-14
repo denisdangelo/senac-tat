@@ -1,1 +1,16 @@
-
+ifconfig
+route -n
+resolvectl
+sudo ifconfig enp0s3 down
+sudo ifconfig enp0s3 up
+resolvectl statistics
+resolvectl flush-caches
+resolvectl reset-statistics
+route -n
+ping 8.8.8.8
+ping google.com
+sudo apt update
+sudo apt install traceroute - traceroute 8.8.8.8
+nslookup 8.8.8.8
+nslookup google.com
+hostname
