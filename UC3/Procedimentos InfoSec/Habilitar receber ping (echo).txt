@@ -1,1 +1,9 @@
+#Configuração para permitir "ping" no SO Windows 10:
 
+Clicar com o botão direito no icone de rede >>
+abrir centrar de rede e compartilhamentos >>
+firewall do windows >>
+configurações avançadas >>
+regras de entrada >>
+monitoramento de maquinas virtuais (solicitação de Eco - ICMPv4-entrada) (botão direito) >>
+habilitar regra.
