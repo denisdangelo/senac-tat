@@ -1,0 +1,13 @@
+enable
+	configure terminal
+	hostname SW1
+	Vlan 10
+	name "nome da vlan"
+	vlan 20
+	name "nome da vlan"
+	interface range fa0/1-12 (portas fast ethernet da 1 a 12)
+	switchport access vlan 10
+	interface range fa0/13-24 (portas fast ethernet da 13 a 24)
+	switchport access vlan 20
+	Interface Gi 0/1
+	switchport mode trunk
