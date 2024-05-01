@@ -1,0 +1,15 @@
+!svi (switch virtual interface)
+enable
+    configure terminal
+        ip default-gateway 192.168.1.254
+        interface vlan 1
+            description Interface SVI
+            ip address 192.168.1.250 255.255.255.0
+            no shutdown
+            end
+write
+
+show running-config
+show interface brief
+ping 192.168.1.250
+ping 192.168.1.1
