@@ -10,6 +10,6 @@ enable
 write
 
 show running-config
-show interface brief
+show ip interface brief
 ping 192.168.1.250
 ping 192.168.1.1
