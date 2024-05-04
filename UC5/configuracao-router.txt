@@ -1,15 +1,15 @@
 Router>enable
 Router#configure terminal
   Router(config)#hostname SP
-    SP(config)#int f0/0
-      SP(config-if)#desc Porta LAn de SP
-      SP(config-if)#ip add 192.168.0.1 255.255.255.0
-      SP(config-if)#no shut
+    SP(config)#interface fastethernet 0/0
+      SP(config-if)#description Porta LAn de SP
+      SP(config-if)#ip address 192.168.0.1 255.255.255.0
+      SP(config-if)#no shutdown 
       SP(config-if)#exit
-    SP(config)#int s0/0
-      SP(config-if)#desc PORTA WAN que LIGA SP ao RJ
-      SP(config-if)#ip add 200.100.10.1 255.255.255.0
-      SP(config-if)#no shut
+    SP(config)#interface serial 0/0
+      SP(config-if)#description PORTA WAN que LIGA SP ao RJ
+      SP(config-if)#ip address 200.100.10.1 255.255.255.0
+      SP(config-if)#no shutdown 
       SP(config-if)#clock rate 256000
       SP(config-if)#bandwicth 256
       SP(config-if)#exit
