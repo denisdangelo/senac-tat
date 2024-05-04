@@ -1,0 +1,24 @@
+Router>enable
+Router#configure terminal
+  Router(config)#hostname SP
+    SP(config)#int f0/0
+      SP(config-if)#desc Porta LAn de SP
+      SP(config-if)#ip add 192.168.0.1 255.255.255.0
+      SP(config-if)#no shut
+      SP(config-if)#exit
+    SP(config)#int s0/0
+      SP(config-if)#desc PORTA WAN que LIGA SP ao RJ
+      SP(config-if)#ip add 200.100.10.1 255.255.255.0
+      SP(config-if)#no shut
+      SP(config-if)#clock rate 256000
+      SP(config-if)#bandwicth 256
+      SP(config-if)#exit
+  SP(config)#router rip
+  SP(config-router)#net 192.168.0.0
+  SP(config-router)#net 200.100.10.0
+  SP(config-router)# "Ctrl+Z" ou end
+SP#show running-config
+SP#copy running-config startup-config
+SP#
+
+SP#reload
