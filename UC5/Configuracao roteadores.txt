@@ -1,0 +1,31 @@
+!configuração dos roteadores
+enable
+    configure terminal
+        hostname
+        interface fastEthernet
+            description
+            ip address 
+            no shutdonw
+            exit
+        interface serial 0/0
+            description
+            ip address 
+            bandwidch 
+            clock rate  
+            no shutdonw
+            exit
+            interface serial 0/1
+            description
+            ip address 
+            bandwidch 
+            clock rate
+            no shutdonw  
+            exit
+        router rip 
+            network
+            network
+            network
+            exit
+        exit
+    copy running-config startup-config
+    exit
