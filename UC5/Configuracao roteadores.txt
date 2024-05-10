@@ -29,3 +29,14 @@ enable
         exit
     copy running-config startup-config
     exit
+
+enable
+        configure terminal
+        service password-encryption
+        enable secret Senac22
+        Line console 0
+            password Denis22
+            login
+            exit
+        exit
+    copy running-config startup-config
