@@ -1,0 +1,27 @@
+!router RT-02
+enable  
+    configure terminal
+        interface GIgabitEthernet 0/0
+            description Interface LAN com SW-05
+            ip address 192.168.2.254 255.255.255.0
+            no shutdown
+            end 
+Write 
+
+
+!rota padrao 0.0.0.0 mask 0.0.0.0
+!routeador 1
+    enable
+        configure terminal
+            ip route 0.0.0.0 0.0.0.0 10.0.0.2
+            end 
+    Write
+
+    roteador 2
+
+    enable
+        configure terminal
+            ip route 192.168.3.0 255.255.255.0 192.168.2.1
+            ip route 192.168.1.0 255.255.255.0 10.0.0.1
+            end 
+    Write
