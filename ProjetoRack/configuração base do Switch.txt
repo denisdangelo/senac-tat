@@ -1,0 +1,107 @@
+!documentação de passo a passo de configuração do switch
+
+!configuração base do SW
+
+!entrar no modo privilegiado
+	enable
+
+!configuração de data e hora 00:00:00 DD Month AAAA
+!OBS: Colocar o mês em ingles, pode sere abrebviado ou completo
+	clock set 21:00:00 28 May 2024
+
+!configuração global: serve para configurações gerais do SW
+	configure terminal
+
+!configuração de nome do SW (hostname):
+!OBS: não precisa colocar "???" em nenhum momento dessa configuração. só foi utilizado o recurso para destaque.
+	hostname ???nome do dispositivo???
+
+
+!habilitar o servico de criptografia de senhas do tipo 7 password
+!esse serviço vem desabilitado por padrão;
+!esse serviço serve para encriptar as senhas de tipo 7 que por padão são exibidas em linha plana (carater por caracter)
+	service password-encryption
+
+!habilitar serviço de marcação de data e hora estampada nos logins
+!OBS o msec serve para mostrar os detalhes em milisegundos;
+	service timestamps log datetime msec
+
+!desativar o resolvedor de nomes de domínio (domain-lookup) para evitar travamentos em erros de digitação;
+!caso esse serviço não esteja habilitado e a tela travar em uma resolução de dominio (EX:translating "time" ... domain server (255.255.255.255)) é só usar as teclas Ctrl+Shift+6 ou esperar a liberação do terminal
+	no ip domain-lookup 
+
+!criação de banner no Switch;
+!O banner serve para apresenar uma mensagem ao acessar o SW
+!o tipo de banner que vamos utilizar é o mais comum chamado MOTD
+!a mensagem ficará entre o simbolo "#" e esse caracter não poderá ser utilizado no meio da mensagem;
+    banner motd #AVISO: acesso autorizado somente a funcionarios#
+
+!habilitar o servico de senha do tipo-5 Secret para acesso ao enable (modo privilegiado);
+!essa senha serve apenas paa acessar o modo privilegiado, não é a senha de login no equipamento;
+!a senha de login no equipamento será setada em outro comando;
+    enable secret 123@senac
+
+!criação de usuários locais utilizando senhas do tipo-5 ou Tipo-7 e privilégios
+!existem 16 níveis de privilégios (0 ao 15) que pode ser habilitados para cada usuário levando a diferentes acessos e possibilidades de configuração do SW por cada um deles;
+!caso o acesso seja para privilégio nivel 00 não precisa colocar a parte da linha "privilege"
+!Nesse projeto vamos configurar 4 usuários todos com o nivel 15 (max) de privilégio
+    username denis_dangelo privilege 15 secret 123@senac
+    username raimundo_fabio privilege 15 secret 123@senac
+    username kimberly_sugai privilege 15 secret 123@senac        
+    username elen_grecco privilege 15 secret 123@senac    
+
+!configuração de segurança para evitar ataque de brute force
+!Verificar tentativas de conexão simultâneas, fazer o bloqueio de um
+!período determinado de tempo, proteção contra Brute Force
+!OBS: "120" se refere a 120 segundos tempo que permite as tentativas "4" se refere a quantidade de tentativas e "60" o tempo em minutos que será bloqueado em caso de as tentativas forem alcançadas 
+	login block-for 120 attempts 4 within 60
+
+!acessar a linha console para configurações de acesso por essa porta e as seguranças dela
+    line console 0
+
+!forçar a utilização de login local na porta console
+!OBS: caso você não queira colocar users no SW você pode dar o comando "login" sem o "local" para ativar uma senha de acesso a porta console
+    login local
+
+!ativar o serviço de senha na porta console
+!OBS: a porta console só permite senhas do tipo-7 password
+    password ???senha de acesso???
+
+!habilitar a sincronização de mensagens de logs do SW 
+    logging synchronous
+
+!habilitar o tempo de inatividade da porta console
+!as configurações são feitas em Minutos e Segundos
+    exec-timeout 5 30
+
+!sair de todos os niveis e ir para o modo execução privilegiada (enable)
+end
+
+!salvando as configurações do SW da memoria ram (volatil) para a memoria nvram (permanente).
+    copy running-config startup-config
+===================================================================
+
+!automatização
+
+enable
+	clock set 21:00:00 28 May 2024
+	configure terminal
+		hostname sw-g03
+		service password-encryption
+		service timestamps log datetime msec
+		no ip domain-lookup
+        banner motd #AVISO: acesso autorizado somente a funcionarios#
+        enable secret 123@senac
+        username denis_dangelo privilege 15 secret 123@senac
+        username raimundo_fabio privilege 15 secret 123@senac
+        username kimberly_sugai privilege 15 secret 123@senac        
+        username elen_grecco privilege 15 secret 123@senac      
+        login block-for 120 attempts 4 within 60  
+        line console 0
+            login local
+            password 123@senac
+            logging synchronous
+            exec-timeout 5 30
+            end
+    copy running-config startup-config 
+        

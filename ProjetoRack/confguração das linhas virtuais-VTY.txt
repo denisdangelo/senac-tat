@@ -1,0 +1,55 @@
+!configurando as Linhas virtuais do SW
+
+!as linhas virtuais são utilizadas para acessar remotamente o terminal do Switch ou Router
+!as linhas virtuais são bem parecida com a linha console, a diferença é que o acesso e feito remotamente utilizando endereço IPv4 ou IPv6.
+!OBs: por padrão o Switch Cisco possui 16 (0 até 15) linhas virtuais de acesso remoto;
+!não é recomendado habilitar poucas linhas ou todas as linhas virtuais no Cisco IOS
+!por padrão as linhas virtuais estão desabilitadas no Cisco IOS, elas dependem da configuração do SVI para funcionar.
+
+!accessar as linhas VTY
+!nesse caso utilizaremos 5 linhas: de 0 a 4
+    line vty 0 4
+
+!Forçando fazer login local utilizando usuário e senha locais do switch
+    login local
+
+!Habilitando senha de acesso do Tipo-7 Password
+    password vaamonde@pti
+
+!Sincronizando as mensagens de logs na tela
+    logging synchronous
+
+!Habilitando o tempo de inatividade de uso da linha virtual
+    exec-timeout 5 30
+
+!Configuração do tipo de protocolo de transporte de entrada
+!poderia-se trocar o comando "ssh" por "all", mas isso abriria as portas para todos os tipos de protocolos de acesso remoto.
+!você também pode selecionar, em lugar de "ssh", o protocolo de sua preferência
+!nesse exemplo utilizaremos o SSH 
+    transport input ssh 
+
+!Saindo de todos os níveis e voltando para o modo EXEC Privilegiado
+    end
+
+    
+!Salvando as configurações da memória RAM para a memória NVRAM
+copy running-config startup-config
+
+
+
+
+=========================================================================================
+
+enabe
+    configure terminal
+        line vty 0 4
+            login local   
+            password 123@senac
+            logging synchronous
+            exec-timeout 5 30
+            transport input ssh 
+            end
+           
+Copy running-config startup-config
+
+    

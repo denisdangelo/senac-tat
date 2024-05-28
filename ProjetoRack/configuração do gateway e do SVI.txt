@@ -1,0 +1,22 @@
+!Configuração do Gateway padrão IPv4 no Switch
+!configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto (monitoramento/gerenciamento)
+! Já em um Switch Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto ou para roteamento de redes/gateway utilizando principalmente VLAN (Virtual-LAN)
+!Segundo a documentação desse projeto o IP utilizado de gateway será o 172.16.30.254
+    ip default-gateway 172.16.30.254
+
+
+
+
+
+
+
+
+
+=========================================================================================
+
+enable
+    configure terminal
+        ip default-gateway 172.16.30.254
+        interface vlan 30
+            description Interface SVI de Gerenciamento do Grupo-03
+            ip address 172.16.30.253 255.255.255.0
