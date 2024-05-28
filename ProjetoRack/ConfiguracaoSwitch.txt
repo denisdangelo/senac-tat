@@ -1,0 +1,45 @@
+!documentação de passo a passo de configuração do switch
+
+!configuração base do SW
+
+!entrar no modo privilegiado
+	enable
+
+!configuração de data e hora 00:00:00 DD Month AAAA
+!OBS: Colocar o mês em ingles, pode sere abrebviado ou completo
+	clock set 21:00:00 28 May 2024
+
+!configuração global: serve para configurações gerais do SW
+	configure terminal
+
+!configuração de nome do SW (hostname):
+!OBS: não precisa colocar "???" em nenhum momento dessa configuração. só foi utilizado o recurso para destaque.
+	hostname ???nome do dispositivo???
+
+
+!habilitar o servico de criptografia de senhas do tipo 7 password
+!esse serviço vem desabilitado por padrão;
+!esse serviço serve para encriptar as senhas de tipo 7 que por padão são exibidas em linha plana (carater por caracter)
+	service password-encryption
+
+!habilitar serviço de marcação de data e hora estampada nos logins
+!OBS o msec serve para mostrar os detalhes em milisegundos;
+	service timestamps log datetime msec
+
+!desativar o resolvedor de nomes de domínio (domain-lookup) para evitar travamentos em erros de digitação;
+!caso esse serviço não esteja habilitado e a tela travar em uma resolução de dominio (EX:translating "time" ... domain server (255.255.255.255)) é só usar as teclas Ctrl+Shift+6 ou esperar a liberação do terminal
+	no ip domain-lookup 
+
+
+
+===================================================================
+
+!automatização
+
+enable
+	clock set 21:00:00 28 May 2024
+	configure terminal
+		hostname sw-g03
+		service password-encryption
+		service timestamps log datetime msec
+		no ip domain-lookup
