@@ -1,0 +1,14 @@
+confreg 0x2142
+reset
+enable
+  erase startup-config
+    show flash
+
+configure terminal
+config-register 0x2102
+end
+copy running-config startup-config
+reload
+
+enable
+show version
