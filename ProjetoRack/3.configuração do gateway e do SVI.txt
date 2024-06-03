@@ -1,0 +1,69 @@
+!Configuração do Gateway padrão IPv4 no Switch
+!configuração do Gateway IPv4 em Switch Layer 2 serve somente para acesso remoto (monitoramento/gerenciamento)
+! Já em um Switch Layer 3 o recurso de Gateway é utilizado tanto para acesso remoto ou para roteamento de redes/gateway utilizando principalmente VLAN (Virtual-LAN)
+!Segundo a documentação desse projeto o IP utilizado de gateway será o 172.16.30.254
+    ip default-gateway 172.16.30.254
+
+!Criar a vlan de SVI (interface virtual do SW)
+!O SVI  é utilizado como rota de pacotes IP inter VLANS. Também é utilizado para acessar as linhas virtuais (VTY) atraves dos protocolos de acesso remoto (telnet ou SSH)
+!nesse projeto a vlan de acesso à SVI será a 30.
+    vlan 30
+
+!nomear a vlan de acesso a SVI
+    name interface SVI
+
+!configurar a iterface virtual do SW (SVI)
+!Acessar a SVI para fazer as configurações
+!Essas cofigurações servem tanto para fazer o roteamento inter-Vlans quanto para acesso remoto das VTY (linhas virtuais)configuradas anteriormente.
+    interface vlan 30
+    
+!Descrever a função dessa SVI
+!Importante: Sempre descrever a função da interface para documentação
+    description ???Descrição da função da SVI???
+
+!configurar o IPv4 da SVI
+!OBS: o IPv4 da SVI deve permanecer a mesma rede do gateway
+!OBS: No projeto o IP do gateway é 172.16.30.254 e o da SVI é 172.16.30.253
+    ip address 172.16.30.253 255.255.255.0
+
+!sair de todas as configurações 
+    end
+
+!salvar as configurações 
+    copy running-config startup-config
+
+!Visualizando as configurações da memória RAM
+    Show running-config
+
+!Visualizando as configurações das VLAN padrão do Switch
+    show vlan brief
+
+!Visualizando as configurações das interfaces e portas de rede do Switch
+    show ip interface brief
+
+
+
+
+
+
+
+OBS IMPORTANTE: A SVI não precisa necessáriamente de uma porta (interace) física do switch. Diferente das VLANS convencionais que são associadas a uma ou mais interfaces, a SVI, como é uma porta virtual de acesso ao SW ou, num L3, um "roteador inter-vlans" ela não precisa de uma interface física.
+Observação: Num Sw chamamos as interfaces de Portas
+=========================================================================================
+
+enable
+    configure terminal
+        ip default-gateway 172.16.30.254
+        vlan 30
+        name interface SVI      
+        interface vlan 30
+            description Interface SVI de Gerenciamento do Grupo-03
+            ip address 172.16.30.253 255.255.255.0
+            end
+copy running-config startup-config
+
+
+Show running-config
+show ip interface brief
+show vlan brief
+show vlan id 

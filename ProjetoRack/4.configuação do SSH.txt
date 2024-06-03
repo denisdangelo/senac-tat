@@ -1,0 +1,63 @@
+!acessar o modo de configuração global 
+    configure terminal
+
+!configuração do nome de dominio FQDN (Nome de dominio totalmente qualificado)
+!OBS: o nome de dominio é utilizado pelo serviço SSH e outros serviços
+!OBS: O nome d domínio é obrigatŕio parautilização do SSH
+!OBs: O nome de dominio utilizado nesse projeto é o senac.br
+    ip domain-name senac.br
+
+!configuração da chave de criptografia e habilitar o serviço SSH server local
+!por padrão o serviço SSH vem desabilitado no SW e todos os acessos remotos utilizando o SSH são criptografadas;
+!OBS: No equipamento real se utiliza a descrição da criptografia (crypto key generate rsa) junto com o modulo e tamanho da criptografia (no caso general-keys modulus 1024) que ficará como a seguir
+    crypto key generate rsa general-keys modulus 1024
+
+!Habilitar a versão 2 do serviço de SSH server
+    ip ssh version 2
+
+!Habilitar o tempo de inatividade para novas conexções do SSH server
+!OBS: a configuração de inatividade é feita somente em segundos(de 0 até 120)
+    ip ssh time-out 60
+
+!Habilitar o número máximo de tentativas de atenticação de conexões SSH
+!Essa opção serve para evitar ataques de força bruta no SW; 
+!Nesse projeto o numero de tentativas de autenticação para acesso via SSH será 2
+    ip ssh authentication-retries 2
+
+
+
+
+!Visualizando as configurações do SSH Server
+    show ip ssh
+
+!Visualizando das chaves públicas RSA
+    show crypto key mypubkey rsa
+
+!Visualizando as conexões ativas do SSH Server
+s   how ssh
+
+!Acessando remotamente o Switch utilizando o protocolo SSH
+!OBSERVAÇÃO: -l (não é o número "1" e sim "l" minúsculo)
+    ssh -l ???login??? ???numero do ip svi???
+
+!Visualizando as conexões remotas estabelecidas no Switch
+!Esse comando só funciona quando tem 1 ou mais acessos remotos realizado no SW
+    show users
+
+
+
+
+=========================================================================================
+
+Enable
+    configure terminal
+        ip domain-name senac.br
+        crypto key generate rsa general-keys modulus 1024
+        ip ssh version 2
+        ip ssh time-out 60
+        ip ssh authentication-retries 2
+        exit
+Copy running-config startup-config
+
+
+
