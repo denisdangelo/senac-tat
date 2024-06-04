@@ -1,0 +1,145 @@
+!configuração base do Router
+
+!Configuração de Data/Hora em Inglês, você pode usar o Mês abreviado ou completo na configuração
+        clock set 17:09:00 04 june 2024
+
+!!Acessando o modo de Configuração Global de comandos
+	    configure terminal
+
+!Configuração do nome do router
+		hostname ???nome do roteador???
+
+!Habilitando o serviço de criptografia de senhas do Tipo-7 Password 
+		service password-encryption
+
+!Habilitando o serviço de marcação de Data/Hora detalhado nos Logs
+        service timestamps log datetime msec
+
+!Habilitando o comprimento mínimo da criação das senhas do Tipo-5 ou Tipo-7
+!OBS: Esse recurso serve para ditar um valor minimo de caracteres para uma senha de acesso à um routeador
+!OBSERVAÇÃO: esse recurso não está disponível em Switch Layer 2 2960 ou Switch Layer 3 3560 
+        security passwords min-length 8
+
+!Bloqueando tentativas de conexões simultâneas com falha de autenticação no Router
+!OBS: Esse recurso faz o bloqueio temporário de tentativas de acesso ao router caso uma quantiade de tentativas seja feita
+!OBS: no projeto o tempo de bloqueio será 2 min (120 seg) caso haja 4 tentativas de autenticação com erro um periodo de até 60 segundos.
+        login block-for 120 attempts 4 within 60
+
+!Desativar a resolução de nomes de domínio
+	    no ip domain-lookup
+
+!Configuração do Banner da mensagem do dia
+		banner motd #AVISO: acesso autorizado somente a funcionarios#
+
+!Habilitando o uso senha do Tipo-5 Secret para acessar o modo EXEC Privilegiado 
+        enable secret 123@senac
+
+
+!Criação dos usuários locais utilizando senhas do Tipo-5 ou Tipo-7 e privilégios diferenciados
+        username denis_dangelo privilege 15 secret 123@senac
+        username raimundo_fabio privilege 15 secret 123@senac
+        username kimberly_sugai privilege 15 secret 123@senac        
+        username elen_grecco privilege 15 secret 123@senac     
+
+
+!Acessando a linha console
+	    line console 0
+	  
+!Habilitando senha do tipo Password Tipo-7
+		    password 123@senac
+		    
+!Forçando fazer login com usuário e senha local
+		    login local
+		    
+!Sincronizando os logs na tela
+		    logging synchronous
+		    
+!Habilitando o tempo de inatividade do console
+		    exec-timeout 5 30
+		    
+!Saindo de todos os níveis
+		    end
+
+!Salvando as configurações
+copy running-config startup-config
+
+
+
+
+
+        
+    
+
+
+=========================================================================================
+!Automação
+
+
+enable
+    clock set 17:09:00 04 june 2024
+    configure terminal
+        hostname ???nome do roteador???
+        service password-encryption
+        service timestamps log datetime msec
+        security passwords min-length 8
+        login block-for 120 attempts 4 within 60
+        no ip domain-lookup
+        banner motd #AVISO: acesso autorizado somente a funcionarios#
+        enable secret 123@senac
+        username denis_dangelo privilege 15 secret 123@senac
+        username raimundo_fabio privilege 15 secret 123@senac
+        username kimberly_sugai privilege 15 secret 123@senac        
+        username elen_grecco privilege 15 secret 123@senac  
+        line console 0
+            password 123@senac
+            login local
+            logging synchronous
+            exec-timeout 5 30
+            end
+copy running-config startup-config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================================
+
+!Criação da chave de criptografia e habilitando o serviço do SSH Server local
+        crypto key generate rsa general-keys modulus 1024
+
+!Habilitando a versão 2 do serviço de SSH Server
+		ip ssh version 2
+
+!Habilitando o tempo de inatividade para novas conexões do SSH Server
+		ip ssh time-out 60
+
+!Habilitando o número máximo de tentativas de conexões simultâneas no SSH Server
+		ip ssh authentication-retries 2
+
+!Habilitar o recurso de marcação de Data/Hora detalhado no Debug (Depurar)
+!Obs: esse é um recurso para roteadores que serve para análise detalhada de logs de protocolos de roteamento
+    service timestamps debug datetime msec
+
+!Configuração do nome de domínio FQDN (Fully Qualified Domain Name)
+        ip domain-name senac.br
+
