@@ -1,0 +1,18 @@
+!Configuração !Procedimento Raid 01 (Espelhamento)
+	Botão direito no menu iniciar>
+		gerenciamento de disco>
+			Opção GPT>
+				Botão direito na partição que será espelhada>
+					Novo volume espelhado
+						Avançar>
+							Selecione o disco que servirá de espelho e "Adicionar">
+								Avançar>
+									Selecione uma letra>
+										formatar o volume como NTFS
+										Tamanho padrão
+										Mudar o nome do volume >
+											Concluir
+
+!OBS: esse Raid é o de espelhamento, onde um HD ou SSD será espelhado em outro
+!Vantagem: Redundância
+!Desvantagem: desempenho, pois você só usará metade do volume inteiro dos dois armazenamentos
