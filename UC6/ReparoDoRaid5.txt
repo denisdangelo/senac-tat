@@ -1,0 +1,8 @@
+!configuração de reparo do Raid 5
+
+botão direito no menu iniciar>
+	gerenciamento de disco>
+		botão direito no disco ativo>
+			Reparar volume>
+				Selecione o novo disco a ser adicionado a paridade>
+					Sim;
