@@ -1,0 +1,12 @@
+!configuração de reparo do Raid 1
+
+botão direito no menu iniciar>
+	gerenciamento de disco>
+		botão direito no disco ativo>
+			Remover espelho>
+				Seleciona o disco com falha>
+					Remover espelho>
+						Botão direito no disco novamente>
+							Adicionar espelho>
+								Selecione o novo disco a servir de espelho>
+									Sim;
