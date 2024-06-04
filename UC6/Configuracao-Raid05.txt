@@ -1,0 +1,21 @@
+!Configuração !Procedimento Raid 05 (Espelhamento)
+	Botão direito no menu iniciar>
+		gerenciamento de disco>
+			Opção GPT >!essa opção só aparece no primeiro acesso às partições
+				Botão direito na partição que será o raid 5>
+					Novo volume Raid-5
+						Avançar>
+							Selecione o disco que servirá de raid>
+								Avançar>
+									Selecione uma letra>
+										formatar o volume como NTFS
+										Tamanho padrão
+										Mudar o nome do volume >
+											Concluir
+
+!OBS: esse raid é o de Paridade. ELe precisa de ao menos 3 discos de armazenamento para ser configurado
+!isso porque, para funcionar ele terá dois ou mais discos para armazenamento dos dados e um disco para a paridade
+!garantindo assim a segurança dos dados
+!vantagem: desempenho. Você tem no mínimo o dobro de desempenho na leitura e gravação, tendo em vista que
+!os dados são gravados simultaneamente com balanceamento
+!desvantagem: precisa de, no mínimo, 3 discos para ser executado.
