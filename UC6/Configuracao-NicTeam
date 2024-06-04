@@ -1,0 +1,44 @@
+!fazer um NIC Team (agrupamento de links)
+!Esse procedimento serve para agregar links de um servidor
+!Cada placa de rede é um link de acesso 
+!OBS: Uma placa de rede que tenha mais de uma entrada também é considerado como mais de um link de acesso
+!OBS: esse procedimento funciona como o eterchannel no Switch
+	Gerenciador do servidor> 
+			Servidor local>
+				Agrupamento NIC>
+					(Em Equipes) Tarefas> Nova equipe
+						Coloque um nome no agrupamento> Selecione as placas de rede que serão agrupadas> propriedades adicionais> Alternar independente> Dinamico> Nenhum (todos os adaptadores Ativos)>"nomedo agrupamento"; Vlan Padrão.
+
+!Observação: é na opção "modo de agrupamento" que colocamos o independente, que já configura automaticamente o acesso ao Switch, ou LACP que configuramos no Server e no Switch.
+!Essa opção é relativa a forma de balanceamento dos dados que transitam no link.
+
+!Configurar um IP no NIC Team
+		Botão direito no icone de rede>
+			Alterar as configurações do adaptador
+				>Selecione o Nic Team configurado 
+					>propriedades
+						>Protocolo TCP/IP versão 4								>Usar o seguinte endereço IP
+
+!OBS: nessa aula o IP fica 172.16.41.10 sendo o "41" relativo a posição do PC da aula (o do raimundo será "40"), a mascara é classe C e o gateway é o 172.16.100.254
+
+
+===========================================================================================================
+
+
+!fazer um NIC Team (agrupamento de links)
+	Gerenciador do servidor> 
+			Servidor local>
+				Agrupamento NIC>
+					(Em Equipes) Tarefas> Nova equipe
+						Coloque um nome no agrupamento> Selecione as placas de rede
+                                            que serão agrupadas> propriedades adicionais> Alternar                                                      
+                                              independente> Dinamico> Nenhum (todos os adaptadores
+                                                Ativos)>"nome do agrupamento"; Vlan Padrão.
+
+!Configurar um IP no NIC Team
+		Botão direito no icone de rede>
+			Alterar as configurações do adaptador
+				>Selecione o Nic Team configurado 
+					>propriedades
+						>Protocolo TCP/IP versão 4								
+              >Usar o seguinte endereço IP
