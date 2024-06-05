@@ -1,0 +1,60 @@
+!Configuração base SW-03
+enable
+	clock set 19:30:00 04 june 2024
+	configure terminal
+		hostname sw-g03
+		service password-encryption
+		service timestamps log datetime msec
+		no ip domain-lookup
+        banner motd #AVISO: acesso autorizado somente a funcionarios#
+        enable secret 123@senac
+        username denis privilege 15 secret 123@senac
+        username raimundo privilege 15 secret 123@senac
+        username kimberly privilege 15 secret 123@senac        
+        username elen_grecco privilege 15 secret 123@senac      
+        login block-for 120 attempts 4 within 60  
+        line console 0
+            login local
+            password 123@senac
+            logging synchronous
+            exec-timeout 5 30
+            end
+    copy running-config startup-config 
+	
+	
+	==================================================================================
+	
+	!Configuração das linhas VTY
+	configure terminal
+		line vty 0 4
+			login local   
+            password 123@senac
+            logging synchronous
+            exec-timeout 5 30
+            transport input ssh 
+            end
+           
+Copy running-config startup-config
+
+=======================================================================================
+
+	!configuração do SSH
+    configure terminal
+        ip domain-name senac.br
+        crypto key generate rsa general-keys modulus 1024
+        ip ssh version 2
+        ip ssh time-out 60
+        ip ssh authentication-retries 2
+        exit
+Copy running-config startup-config
+
+=========================================================================================
+	!configuração do SVI e Gateway
+    configure terminal
+        ip default-gateway 172.16.30.254
+        interface vlan 30
+            description Interface SVI de Gerenciamento do Grupo-03
+            ip address 172.16.30.253 255.255.255.0
+			no shutdown
+            end
+copy running-config startup-config

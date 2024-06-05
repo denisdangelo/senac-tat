@@ -1,0 +1,103 @@
+!configuração base rt-03
+enable
+    clock set 19:45:00 04 june 2024
+    configure terminal
+        hostname rt-g03
+        service password-encryption
+        service timestamps log datetime msec
+        security passwords min-length 8
+        login block-for 120 attempts 4 within 60
+        no ip domain-lookup
+        banner motd #AVISO: acesso autorizado somente a funcionarios#
+        enable secret 123@senac
+        username denis privilege 15 secret 123@senac
+        username raimundo privilege 15 secret 123@senac
+        username kimberly privilege 15 secret 123@senac        
+        username elen privilege 15 secret 123@senac  
+        line console 0
+            password 123@senac
+            login local
+            logging synchronous
+            exec-timeout 5 30
+            end
+copy running-config startup-config
+show running-config
+
+===================================================================================
+
+!Configuração das linhas VTY
+	configure terminal
+		line vty 0 4
+			login local   
+            password 123@senac
+            logging synchronous
+            exec-timeout 5 30
+            transport input ssh 
+            end
+           
+Copy running-config startup-config
+
+====================================================================================
+
+!configuração do SSH
+    configure terminal
+        ip domain-name senac.br
+        crypto key generate rsa general-keys modulus 1024
+        ip ssh version 2
+        ip ssh time-out 60
+        ip ssh authentication-retries 2
+        exit
+Copy running-config startup-config
+
+=====================================================================================
+
+configure terminal
+	interface gigabitEthernet 0/0
+		no shutdown
+		exit
+		interface gigabitEthernet 0/0.30
+			description Subinterface da VLAN de SVI do Switch Layer 3 3560 do Grupo-03
+			encapsulation dot1Q 30
+			ip address 172.16.30.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.31
+			description Subinterface da VLAN do denis
+			encapsulation dot1Q 31
+			ip address 172.16.31.254 255.255.255.0
+			exit	
+			
+		interface gigabitEthernet 0/0.32
+			description Subinterface da VLAN do elen
+			encapsulation dot1Q 32
+			ip address 172.16.32.254 255.255.255.0
+			exit	
+		
+		interface gigabitEthernet 0/0.33
+			description Subinterface da VLAN do kimberly
+			encapsulation dot1Q 33
+			ip address 172.16.33.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.34
+			description Subinterface da VLAN do raimundo
+			encapsulation dot1Q 34
+			ip address 172.16.34.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.35
+			description Subinterface da VLAN Wireless
+			encapsulation dot1Q 35
+			ip address 172.16.35.254 255.255.255.0
+			end
+			
+			copy running-config startup-config
+			
+			show running-config
+			
+			show ip interface brief
+			
+			
+			
+			
+			show ip route connected
