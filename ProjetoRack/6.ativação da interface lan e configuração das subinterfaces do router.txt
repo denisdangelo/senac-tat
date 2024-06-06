@@ -1,0 +1,100 @@
+!Acessando o modo de Configuração Global de comandos
+	    configure terminal
+
+!acessar a interface (porta) que está fisicamente ligada na rede LAN
+!no nosso projeto a interace LAN é a GigabitEthernet 0/0
+    interface ???interface fisicamente linada a rede LAN???
+
+!ativar a interface da rede LAN
+!para ter certeza de que se está efetivamente na porta, deve-se notar a palavre "IF" depois de "conf" anes do hashtag [EX.(config-if)# ]
+!OBS: as portas nos Sw, por padrão ja vem ativas, mas nos routers estão desativadas.
+    no shutdown
+
+!sair da interface
+    exit
+
+!configurar as subinterfaces das futuras vlans dentro da interface LAN do router
+!OBS: o número que vem após o ponto faz referencia à Vlan que será Taggiada na interface e será a referência da subinterface
+    interface gigabitEthernet 0/0.30 
+
+!descrever a função da subinterface
+    description Subinterface da VLAN de SVI do Switch Layer 3 3560 do Grupo-03
+
+!encapçular a VLAN que que será referenciada na porta LAN do Router
+OBS:Esse procedimento faz o encapsulamento das vlans dentro da interface do router, pois o mesmo não "entende" Vlans e por isso precisa que seja colocado uma "tag" em uma subinterface e que essa mesma subinterace tenha um IP de uma subrede
+!OBS: o número que vem após o ponto faz referencia à Vlan que será Taggiada na interface
+    encapsulation dot1Q 30
+
+!configuração do IP da subinterace da rede lan
+!é muito importante a documentação do IP de cada subrede vinculada a cada VLAN taggiada pois eles são utilizados em diversas configurações possiveis no router.
+    ip address 172.16.30.254 255.255.255.0
+
+!sair da subinterface
+    Exit
+
+!configurar as demias subinterfaces do router
+!OBS: no projeto serão 6 - 1 para SVI 4 para USERS e 1 para REDE WIFI
+
+ 
+
+
+=========================================================================================
+enable
+    configure terminal
+        interface gigabitEthernet 0/0
+            no shutdown
+            exit
+        
+        interface gigabitEthernet 0/0.30
+			description Subinterface da VLAN de SVI do Switch Layer 3 3560 do Grupo-03
+			encapsulation dot1Q 30
+			ip address 172.16.30.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.31
+			description Subinterface da VLAN do denis
+			encapsulation dot1Q 31
+			ip address 172.16.31.254 255.255.255.0
+			exit	
+			
+		interface gigabitEthernet 0/0.32
+			description Subinterface da VLAN do elen
+			encapsulation dot1Q 32
+			ip address 172.16.32.254 255.255.255.0
+			exit	
+		
+		interface gigabitEthernet 0/0.33
+			description Subinterface da VLAN do kimberly
+			encapsulation dot1Q 33
+			ip address 172.16.33.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.34
+			description Subinterface da VLAN do raimundo
+			encapsulation dot1Q 34
+			ip address 172.16.34.254 255.255.255.0
+			exit
+			
+		interface gigabitEthernet 0/0.35
+			description Subinterface da VLAN Wireless
+			encapsulation dot1Q 35
+			ip address 172.16.35.254 255.255.255.0
+			end
+			
+			copy running-config startup-config
+			
+			show running-config
+			
+			show ip interface brief
+			
+			
+			
+			
+			show ip route connected
+        
+        
+        
+        
+        
+        
+        

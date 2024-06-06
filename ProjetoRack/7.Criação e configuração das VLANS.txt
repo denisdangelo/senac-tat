@@ -1,0 +1,99 @@
+!Criar uma VLAN
+!OBS: no nosso projeto o número correspondente a nossas vlans serão 30 (SVI), 31,32,33,34 (users) e 35 (WiFi)
+    vlan ???numero correspondete a vlan???
+
+!nomear Vlan
+    name svig03
+
+!Configurando a Interface de Acesso a VLAN 
+interface
+
+
+=========================================================================================
+configure terminal
+		vlan 30
+			name svig03
+		vlan 31
+			name denis
+		vlan 32
+			name elen
+		vlan 33
+			name kimberly
+		vlan 34
+			name raimundo
+		vlan 35
+			name wifi
+			exit
+        interface fastEthernet 0/2
+            description Interface de Acesso da VLAN denis_dangelo
+            switchport mode access
+            switchport access vlan 31
+        exit
+        interface fastEthernet 0/3
+            description Interface de Acesso da VLAN elen_grecco
+            switchport mode access
+            switchport access vlan 32
+        exit
+        interface fastEthernet 0/4
+            description Interface de Acesso da VLAN kimberly_sugai
+            switchport mode access
+            switchport access vlan 33
+        exit
+        interface fastEthernet 0/5
+            description Interface de Acesso da VLAN raimundo_fabio
+            switchport mode access
+            switchport access vlan 34
+        exit
+        interface fastEthernet 0/6
+            description Interface de Acesso da VLAN wifi
+            switchport mode access
+            switchport access vlan 33
+        exit
+        interface range fastEthernet 0/7 - 23
+			shutdown
+			exit
+        interface fastEthernet 0/24
+			description Interface de Trunk com o Router 2911 do Grupo-03
+			switchport trunk encapsulation dot1q
+			switchport mode trunk
+		end
+
+
+!Salvando as configurações
+copy running-config startup-config
+	
+!Visualizando as configurações
+show running-config
+
+!Visualizando as configurações de endereçamento IPv4
+show ip interface brief
+
+!Visualizando as informações de VLAN
+show vlan brief
+
+!Visualizando informações de uma VLAN utilizando o ID
+show vlan id ???
+
+!Visualizando informações de uma VLAN utilizando o Nome
+show vlan name ???
+
+!Visualizando as informações de Status das Interfaces
+show interface status
+
+!Visualizando informações de Interfaces Trunk
+show interface trunk
+
+!Visualizando informações detalhadas das Interfaces de Trunk
+show interfaces fastEthernet 0/24 status
+show interfaces fastEthernet 0/24 switchport
+
+!Comandos para testar a conexão com o Router
+
+!Pingando o endereço de SVI do Switch
+ping 172.16.???.253
+
+!Pingando o endereço de Gateway do Router
+ping 172.16.???.254
+
+!Acessando via SSH o Router do Switch
+ssh -l ???seu_usuário??? 172.16.???.254
