@@ -1,0 +1,45 @@
+configure terminal
+		ip dhcp excluded-address 172.16.31.1 172.16.31.100
+		ip dhcp excluded-address 172.16.31.200 172.16.31.254
+		ip dhcp pool vlan 31
+			network 172.16.31.0 255.255.255.0
+			default-router 172.16.31.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+		
+		ip dhcp excluded-address 172.16.32.1 172.16.32.100
+		ip dhcp excluded-address 172.16.32.200 172.16.32.254
+		ip dhcp pool vlan 32
+			network 172.16.32.0 255.255.255.0
+			default-router 172.16.32.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+			
+		ip dhcp excluded-address 172.16.33.1 172.16.33.100
+		ip dhcp excluded-address 172.16.33.200 172.16.33.254
+		ip dhcp pool vlan 33
+			network 172.16.33.0 255.255.255.0
+			default-router 172.16.33.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+		
+		ip dhcp excluded-address 172.16.34.1 172.16.34.100
+		ip dhcp excluded-address 172.16.34.200 172.16.34.254
+		ip dhcp pool vlan 34
+			network 172.16.34.0 255.255.255.0
+			default-router 172.16.34.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
+			
+		ip dhcp excluded-address 172.16.35.1 172.16.35.100
+		ip dhcp excluded-address 172.16.35.200 172.16.35.254
+		ip dhcp pool vlan 35
+			network 172.16.35.0 255.255.255.0
+			default-router 172.16.35.254
+			dns-server 8.8.8.8 8.8.4.4
+			domain-name senac.br
+			exit
