@@ -1,0 +1,34 @@
+ferramentas
+	usuários e computadores do active director
+		ação
+			novo
+				unidade organizacional
+					Colocar nome do grupo > proteger contêiner
+					
+Colocar um usuário no AD
+	Selecione a unidade organizacional 
+		selecione criar um novo usúário 
+			coloque nome e sobrenome
+				coloque o nome do logon deixando o dominio selecionado
+					avançar
+						coloque a senha (precisa ter Letra maiuscula, minuscula, caracter especial e número)
+							e selecione os tipos de login descritos
+							
+Colocar um PC no domínio (observação. o desktop que for fazer esse procedimento tem que pertencer ao domínio);
+	btão direito no menu iniciar 
+		sistema
+			renomear este computadore
+				alterar 
+				membro de: domínio
+					coloque o nome de domínio
+					
+					(OBS login e senha do administrador por padrão é ADMINISTRADOR e senha do server)
+					
+alterar horário ou restringir desktop de usuário no AD
+	ferramentas
+		usuários e computadores do active director
+			selecione a unidade organizacional	
+				selecione duas vezes o usuário
+					conta
+						horario de logon e ou > selecione o horiario 
+						fazer logon em  > selecione fazer logon em e coloque o numero das estaçoes;
