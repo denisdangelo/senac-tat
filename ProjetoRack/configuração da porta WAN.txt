@@ -1,0 +1,16 @@
+interface serial 0/0/0
+		description Interface Serial do Grupo-03 para o grupo-04
+		Serial 0/0/0
+		ip address 192.168.1.9 255.255.255.252
+		clock rate 64000
+		bandwidth 64
+		no shutdown
+		exit
+		
+	
+	interface serial 0/0/1
+		description Interface Serial do Grupo-02 para o grupo-03
+		ip address 192.168.1.6 255.255.255.252
+		bandwidth 64
+		no shutdown
+		end
