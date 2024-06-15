@@ -1,1 +1,49 @@
+como exluir uma OU
+	abre o AD na guia de usuários e computadores do AD>
+		clique em exibir na barra superior >
+			recursos avançados>
+				agora selecione a O.U. com o botão direito>
+					Propriedades>
+						Objeto>
+							desative a opção "proteger objeto contra exclusão acidental"
+!OBS: Também é possível ativar essa proteção para um usuário seguindo basicamente o mesmo caminho.
 
+!Criar grupos e adicionar membros
+	abre o AD na guia de usuários e computadores do AD>
+		Abre a O.U onde o grupo será selecionado>
+			botão direito dentro da O.U.>
+				novo>
+					Grupo
+			
+	
+	
+!Como permissionar pastas à grupos
+	Abrir a pasta de arquivos
+		Selecione o HD onde será criada a pasta compartilhada
+			Crie a pasta (botão direito> nova > pasta)
+				Selecione a pasta com o botão direito
+					propriedades>	
+						compartilhamento>
+							compartilhamento avançado>
+								selecionar a caixa "compartilhar pasta">
+									clicar em permissões>
+										seleciona "todos">
+											Remover>
+												adicionar>
+													Usuários do domínio>
+													 ok>
+														Ok>
+															Abre a aba segurança>
+																Avançadas>  
+																	Desabilitar herança>
+																		converter as permissões herdadas em permissões explicitas no objeto
+																			ok>
+																				Editar>
+																					Seleciona o "usuários">
+																						Remover>
+																							Adicionar>
+																								digita o grupo>
+																									Verificar nomes>
+																										ok>
+																											Ok>
+																												Fechar;
