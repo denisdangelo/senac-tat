@@ -1,1 +1,19 @@
-
+!mapear pastas:
+	abre o explorador de arquivos
+		windows>
+			SYSVOL>
+				sysvol>
+					nome do domínio (no caso denis.intra)>
+						scripts>
+							Abre um arquivo do bloco de notas>
+								
+								Digite o script:
+								!("net" é referente a rede; "use" é para deixar visivel ao usuário [mapear]; "O:" é a 
+								!letra que será atribuida[pode ser outra letra] e \\srvdenis\publica é o caminho da pasta
+								!que será mapeada.
+								net use O: \\srvdenis\publica
+								
+								E o comando:
+								!"start" refere-se a ativar o que vem a seguir; "%windir%\system32\notepad.exe" se refere
+								!ao programa que será executado apos o logon do (pc) cliente
+								start %windir%\system32\notepad.exe
