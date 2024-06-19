@@ -25,3 +25,6 @@ Perfil> em Script de logon coloca o arquivo que foi salvo na pasta 'sysvol' na e
 
 OBS: Só é possivel fazer essa configuração nos Users do Servidor. Não é possivel fazer essa ação de scrips para grupo
 OBS: è possivel fazer um script para grupos, mas para isso é necessário fazer um script em VBS (linguagem de programação).
+OBS: Caso tenha um usuário em dois grupos (que precisa de acessos diferentes) existem duas possibilidades:
+     1) fazer um script diferente para os dois acessos em um unico script (por exemplo, um professore que seja coordenador e precisa de acesso as duas pastas)
+     2) fazer um script que chame os scripts que ele precisa executar (por exemplo, um script que abre o script de coordenador e script de professor; nesse caso precisa ter atenção nas letras mapeadas para não ter nenhuma repetida e nos demais acessos
