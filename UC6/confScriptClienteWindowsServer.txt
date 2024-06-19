@@ -17,3 +17,11 @@
 								!"start" refere-se a ativar o que vem a seguir; "%windir%\system32\notepad.exe" se refere
 								!ao programa que será executado apos o logon do (pc) cliente
 								start %windir%\system32\notepad.exe
+
+Após preparar o arquivo deve ser salvo com uma extenção .bat ou .cmd nesse caminho (windows> SYSVOL> sysvol> nome do domínio (no caso denis.intra)> scripts>)
+
+Depois do arquivo pronto deve-se a brir o usuário que usará esse script abrir a opção Ferramentas> Usuários e computadores do AD> abre o(s) usuário(s) que terá o script>
+Perfil> em Script de logon coloca o arquivo que foi salvo na pasta 'sysvol' na etapa anterior.
+
+OBS: Só é possivel fazer essa configuração nos Users do Servidor. Não é possivel fazer essa ação de scrips para grupo
+OBS: è possivel fazer um script para grupos, mas para isso é necessário fazer um script em VBS (linguagem de programação).
