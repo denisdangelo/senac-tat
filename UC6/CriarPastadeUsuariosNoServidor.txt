@@ -1,0 +1,12 @@
+Criar uma pasta
+compartilhar a pasta (colocar um $ no final do nome da pasta para ela ser pasta oculta no SRV) com alteração, aos usuarios do dominio
+segurança compartilhar com os usuários do dominio com alteração
+selecionar os usuários 
+entrar em propriedades>perfil
+habilitar "pasta base"
+seleciona "conectar"
+Selecina uma letra (normalmente as ultimas são usadas para isso)
+coloca o caminho da pasta (\\srvdenis\home$) com \%username% no final (dessa forma o proprio windows cria a pasta do usuário com o nome dele, pois "%"significa Variavel e 
+                                                                      "username" é o nome do usuário que faz o Login). FIcará assim \\srvdenis\home$\%username%
+
+OBS: é importante retirar os usuários do domínio na aba "segurança" na parte de propriedades da Pasta para evitar que outros usuários possam acessar 
