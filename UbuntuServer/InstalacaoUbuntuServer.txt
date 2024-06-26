@@ -1,0 +1,41 @@
+~(home)
+ip adrres show - comando para mostrar o endereço ipv4
+ipv4 atual 10.26.44.29/24
+w - mostra os usuários que se autenticaram
+
+#Update é utilizado para baixar informações de pacotes de todas as fontes configuradas.
+sudo apt update
+
+#Upgrade é utilizado para instalar atualizações disponíveis de todos os pacotes atualmente 
+#instalados no sistema a partir das fontes configuradas via sources.list
+sudo apt upgrade
+
+#Dist-Upgrade além de executar a função de atualização, também lida de forma inteligente 
+#com as novas dependências das novas versões de pacotes
+sudo apt full-upgrade
+
+#Full-Upgrade executa a função de atualização, mas removerá os pacotes atualmente 
+#instalados se isso for necessário para atualizar o sistema como um todo
+sudo apt dist-upgrade
+
+#Autoremove é utilizado para remover pacotes que foram instalados automaticamente para 
+#satisfazer dependências de outros pacotes e agora não são mais necessários, pois as 
+#dependências foram alteradas ou os pacotes que precisavam deles foram removidos nesse 
+#meio tempo.
+sudo apt autoremove
+
+#Autoclean como Clean, o autoclean limpa o repositório local de arquivos de pacotes 
+#recuperados. A diferença é que ele remove apenas arquivos de pacotes que não podem 
+#mais ser baixados e são inúteis.
+sudo apt autoclean
+
+#init é o primeiro processo iniciado durante a inicialização do sistema 
+#de computador. O init é um processo daemon que continua executando até o sistema 
+#ser desligado. o init trabalha no conceito de Runlevel (níveis de execução), no
+#GNU/Linux temos basicamente 08 (oito) tipos de Runlevels: init 0 - Shutdown, init 
+#1 - Single user mode or emergency mode, init 2 - No network, init 3 - Network is 
+#present, init 4 It is similar to runlevel 3, init 5 - Network is present, init 6 
+#This runlevel is defined to system restart, init s - Tells the init command to 
+#enter the maintenance mode, init S - Same as init s, init m - Same as init s and 
+#init S e init M - Same as init s or init S or init m.
+sudo init 0
